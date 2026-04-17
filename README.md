@@ -1,1 +1,1 @@
-# BSc-Computer-Science-UniPi
+# Laurea triennale in informatica - UniPi
