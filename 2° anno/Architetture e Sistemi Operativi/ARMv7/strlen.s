@@ -1,7 +1,5 @@
-
-   /*Sottoprogramma: strlen
-   Input:  R0 = Indirizzo base della stringa
-   Output: R0 = Lunghezza della stringa (escluso lo \0)*/
+@ R0 = Indirizzo base della stringa
+@ R0 = Lunghezza della stringa (escluso lo \0)
 
 strlen:
     MOV R1, #0          @ R1 sarà il nostro contatore (len = 0)
