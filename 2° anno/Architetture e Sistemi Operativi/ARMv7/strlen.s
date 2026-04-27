@@ -1,19 +1,14 @@
-@ R0 = Indirizzo base della stringa
-@ R0 = Lunghezza della stringa (escluso lo \0)
+.global strlen
+.type strlen, %function
 
 strlen:
-    MOV R1, #0          @ R1 sarà il nostro contatore (len = 0)
-
+    MOV R1, #0          ; Inizializza il contatore (lunghezza) a 0
 loop:
-    LDRB R2, [R0, R1]   @ Carica un singolo BYTE dalla memoria:
-                        @ R2 = Memoria[R0 + R1]
-    
-    CMP  R2, #0         @ Il carattere caricato è il terminatore nullo?
-    BEQ  fine           @ Se R2 == 0, salta alla fine
-
-    ADD  R1, R1, #1     @ Altrimenti: incrementa il contatore (len++)
-    B    loop           @ Torna all'inizio del ciclo
-
+    LDRB R2, [R0], #1   ; Carica il byte puntato da R0 in R2 e incrementa R0 di 1 [10]
+    CMP R2, #0          ; Verifica se il carattere è il terminatore NULL (0) [6]
+    BEQ fine            ; Se è 0, salta alla fine del ciclo [11]
+    ADD R1, R1, #1      ; Altrimenti, incrementa il contatore della lunghezza
+    B loop              ; Ripete il ciclo
 fine:
-    MOV  R0, R1         @ Sposta il risultato finale in R0 (valore di ritorno)
-    MOV  PC, LR         @ Ritorna al chiamante
+    MOV R0, R1          ; Mette il risultato (lunghezza) in R0 per il ritorno [1]
+    MOV PC, LR          ; Ritorna al chiamante [7, 8]
