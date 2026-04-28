@@ -8,3 +8,4 @@ restituisce $1$ (vero) se il numero passato come parametro è una potenza di due
 * **Esercizio 4**
 * **Esercizio 5**
 * **[Esercizio 6](strlen.s)**: Funzione strlen che restituisce la lunghezza di una stringa terminata dal carattere nullo \0.
+* **Esercizio 7**: Implementare la funzione $f(x) = \frac{3x+1}{4}$.
