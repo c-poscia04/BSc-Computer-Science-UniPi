@@ -16,4 +16,5 @@
 * **Esercizio**: Map su lista.
 * **Esercizio**: Controllo condizioni di Bernstein.
 * **Esercizio**: Prodotto tra vettori.
+* **[Esercizio](cercaBin.s)**: Ricerca di un elemento in un albero binario.
 
