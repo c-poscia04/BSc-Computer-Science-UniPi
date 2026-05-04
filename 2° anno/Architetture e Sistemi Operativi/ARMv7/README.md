@@ -17,4 +17,5 @@
 * **Esercizio**: Controllo condizioni di Bernstein.
 * **Esercizio**: Prodotto tra vettori.
 * **[Esercizio](cercaBin.s)**: Funzione cerca(nodo *A, int x) che ricerca l'elemento x in un albero binario.
+* **[Esercizio](ricercaIt.s)**: Ricerca iterativa su lista.
 
