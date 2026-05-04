@@ -7,7 +7,7 @@
 * **Esercizio 4**: Conta il numero di occorrenze di ciascun carattere in una stringa.
 * **[Esercizio 5](fact.s)**: Calcolo del fattoriale di un numero.
 * **[Esercizio 6](strlen.s)**: Funzione strlen che restituisce la lunghezza di una stringa terminata dal carattere nullo \0.
-* **Esercizio**: Calcolo dei numeri di Fibonacci.
+* **[Esercizio](fib.s)**: Calcolo dei numeri di Fibonacci.
 * **Esercizio**: Calcolare la somma delle cifre decimali che appaiono in una stringa ASCII.
 * **Esercizio**: conversione in binario.
 * **Esercizio**: Calcolo di un polinomio con i parametri passati sullo stack.
