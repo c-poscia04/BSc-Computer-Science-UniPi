@@ -2,7 +2,7 @@
 .type fact, %function
 .text
 
-;Calcola n! - R0 riceve n
+; Calcola n! - R0 riceve n
 fact:
     CMP r0, #0          ; Caso base: n == 0?
     BGT continue        ; Se n > 0, vai a 'continue'
