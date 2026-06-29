@@ -9,3 +9,4 @@
 
 
 ## Algebra lineare
+* [Fattorizzazione LU](lu.m)
