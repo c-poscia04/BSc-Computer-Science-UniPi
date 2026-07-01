@@ -10,3 +10,4 @@
 
 ## Algebra lineare
 * [Fattorizzazione LU](lu.m)
+* Fattorizzazione LU con pivoting parziale
