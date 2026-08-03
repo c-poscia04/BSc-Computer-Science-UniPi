@@ -1,8 +1,7 @@
 ## Esercizi ARMv7 🚧
 
 * **[Esercizio 1](fun.s)**: Implementare una funzione che calcoli $f(x) = \frac{3x+1}{4}$.
-* **[Esercizio 2](main.s)**: Stampa a schermo di un intero.
-* **[Esercizio 3](strlen.s)**: Funzione strlen che restituisce la lunghezza di una stringa terminata dal carattere nullo \0.
+* **[Esercizio 2](strlen.s)**: Funzione strlen che restituisce la lunghezza di una stringa terminata dal carattere nullo \0.
 
 * **[Esercizio 2](check.s)**: Controllare se un numero da 32 bit è una potenza di 2.
 * **[Esercizio 3](ce.s)**: Implementare in ARMv7 la funzione con firma int ce(int x, int *v, int n); che restituisce 1 se x compare nel vettore di interi v di lunghezza n, 0 altrimenti. La funzione deve essere realizzata senza utilizzare registri non temporanei (vincolo obbligatorio da rispettare).
