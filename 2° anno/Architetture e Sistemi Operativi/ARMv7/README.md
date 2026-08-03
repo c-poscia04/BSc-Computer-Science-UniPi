@@ -34,4 +34,48 @@ rappresentano i registri scritti dall’istruzione.
 Si richiedere di scrivere in ARMv7 una funzione bernstein che riceve nei due parametri in ingresso
 l’insieme dei registri letti e scritti da due istruzioni, codificati come descritto precedentemente, e
 restituisce 1 se e solo se valgono le condizioni di Bernstein fra le due istruzioni, 0 altrimenti.
+* **Esercizio**: Un albero binario i cui nodi mantengono una informazione di tipo intero è rappresentato utilizzando
+nodi di tre parole: la prima (info) contiene l’informazione numerica, la seconda e la terza (left e right)
+contengono il puntatore al figlio sinistro e destro e possono essere NULL in caso di assenza del
+sottoalbero destro e/o sinistro.
+Si fornisca un’implementazione in ARMv7 che cerca se in un albero di cui è nota la radice si trovi o
+meno un nodo con una certa informazione. La funzione cerca deve avere la firma seguente
+int cerca(NODO *radice, int x);
+e restituisce 1 se nell’albero c’è almeno una occorrenza dell’intero x oppure 0 altrimenti. E’
+consigliato pensare ad una implementazione ricorsiva:
+int cerca(NODE* r, int i) {
+if(r == NULL) return(0);
+if(r->info == i) return(1);
+int cl = c_cerca(r->left,i);
+int cr = c_cerca(r->right,i);
+return(cl | cr);
+}   
+* **Esercizio**: Una lista è formata da elementi di tipo Node che contengono due campi: value (intero con segno) e
+next (puntatore al prossimo elemento). Si supponga di avere a disposizione una funzione con firma
+int check(Node *L1, int x);
+che ritorna 1 se il valore x è contenuto nella lista L1 oppure 0 altrimenti. Si richiede di sviluppare
+una funzione ARMv7 (rispettando tutti i vincoli e regole viste a lezione) con la seguente firma
+Node *addDistinct(Node *L1, Node *L2);
+Il suo effetto è quello di aggiungere in cima ad L1 gli elementi di L2 il cui campo value non è già
+presente in L1. La funzione ritorna in uscita il puntatore all’inizio della nuova lista. Si può assumere
+che la lista L2 non contenga elementi con lo stesso campo value.
+* **Esercizio**: (esercizio 2 - esame 3 settembre 2025)
+* **Esercizio**: Si fornisca il codice ARMv7 di una funzione con firma void conta(istr_t *p, int n) che stampa,
+chiamando una printf, il numero di istruzioni operative, di load/store e di salto nel segmento di codice
+ARMv7 di n>0 istruzioni che cominciano all’indirizzo p. Si utilizzino tutte le convenzioni relative
+alla codifica delle funzioni di ARMv7.
+* **Esercizio**: esercizio 1 gennaio 2026
+* **Esercizio**: Si realizzi una funzione in ARMv7 che riceve due interi codificati in modulo e segno su 16 bit e
+restituisce il loro prodotto, sempre in modulo e segno ma su 32 bit. La signature della funzione sarà
+quindi:
 
+bit32_t mult(bit16_t a, bit16_t b);
+
+con bitNN_t tipo dei dati interi rappresentati in modulo e segno su NN bit. Dal momento che
+lavoriamo su ARMv7 (a 32 bit), dati bit16_t saranno rappresentati nella parte basse dei registri
+utilizzati per il passaggio di parametri e per il ritorno del risultato di una funzione. Per
+l’implementazione della funzione mult NON si può utilizzare l’istruzione MUL, pure presente
+nell’assembler ARMv7.
+Si ricorda che la rappresentazione modulo e segno su N bit prevede che il bit più significativo sia
+utilizzato per rappresentare il segno (0 per + e 1 per -) e che i rimanenti N-1 bit rappresentano il
+valore assoluto del numero.
