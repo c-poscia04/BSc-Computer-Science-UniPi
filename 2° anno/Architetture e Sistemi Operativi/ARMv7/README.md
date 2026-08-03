@@ -28,4 +28,10 @@ restituendo il puntatore (modificato, se necessario) alla lista. La procedura de
 convenzioni ARMv7, in modo che possa essere chiamata da altro codice, C o assembler. Per allocare
 la memoria necessaria a contenere il nuovo elemento, si faccia uso di una chiamata alla funzione di
 libreria malloc.
+* **Esercizio**: L’insieme dei registri letti e scritti da una istruzione sono rappresentati da due bitmap in un registro
+da 32 bit: i 16 bit più alti rappresentano i registri letti dall’istruzione; i 16 meno significativi
+rappresentano i registri scritti dall’istruzione.
+Si richiedere di scrivere in ARMv7 una funzione bernstein che riceve nei due parametri in ingresso
+l’insieme dei registri letti e scritti da due istruzioni, codificati come descritto precedentemente, e
+restituisce 1 se e solo se valgono le condizioni di Bernstein fra le due istruzioni, 0 altrimenti.
 
