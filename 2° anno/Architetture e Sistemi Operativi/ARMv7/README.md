@@ -1,4 +1,4 @@
-## Esercizi ARMv7
+## Esercizi ARMv7 🚧
 
 * **[Esercizio 1](fun.s)**: Implementare una funzione che calcoli $f(x) = \frac{3x+1}{4}$.
 * **[Esercizio 2](conta.s)**: Controllare se un numero da 32 bit è una potenza di 2.
