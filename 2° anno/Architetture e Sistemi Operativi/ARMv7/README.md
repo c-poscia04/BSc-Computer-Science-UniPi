@@ -19,4 +19,13 @@
 * **Esercizio**: Prodotto tra vettori.
 * **[Esercizio](cercaBin.s)**: Funzione cerca(nodo *A, int x) che ricerca l'elemento x in un albero binario.
 * **[Esercizio](ricercaIt.s)**: Ricerca iterativa su lista.
+* **Esercizio**: Implementare in assembler ARMv7 una procedura di signature:
+ELEM * insert(ELEM * lista, int info)
+che opera su elementi definiti come
+typedef struct __e { int info, struct __e * next} ELEM;
+inserendo, in fondo alla lista puntata dal parametro lista un nuovo elemento con informazione info
+restituendo il puntatore (modificato, se necessario) alla lista. La procedura deve rispettare tutte le
+convenzioni ARMv7, in modo che possa essere chiamata da altro codice, C o assembler. Per allocare
+la memoria necessaria a contenere il nuovo elemento, si faccia uso di una chiamata alla funzione di
+libreria malloc.
 
