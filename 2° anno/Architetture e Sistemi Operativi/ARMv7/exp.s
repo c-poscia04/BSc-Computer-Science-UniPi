@@ -2,29 +2,27 @@
 .type Exp, %function
 .text
 
-; Parametri: R0 = base (x), R1 = esponente (n)
+; Parametri di input: 
+;   R0 = base (x)
+;   R1 = esponente (n)
+; Valore di ritorno: 
+;   R0 = x^n
 
 Exp:
-    CMP r1, #0          ; Caso base: n == 0?
-    BGT continue        ; Se n > 0, procedi con la ricorsione
+    CMP r1, #0          ; Confronta l'esponente n con 0
+    BEQ base            ; Se n == 0, salta al caso base
 
-    ; Caso base (n=0): ritorna 1
-    mov r0, #1          ; Carica il valore di ritorno 1 in R0
+    ; --- CASO RICORSIVO (n > 0) ---
+    push {r0, lr}       ; Salva sullo stack la base (R0) e l'indirizzo di ritorno (LR)
+    
+    sub r1, r1, #1      ; Decrementa l'esponente (n - 1)
+    bl Exp              ; Chiamata ricorsiva: calcola x^(n-1). Il risultato torna in R0.
+    
+    pop {r2, lr}        ; Ripristina dal stack la base originale mettendola in R2, e il vecchio LR
+    mul r0, r2, r0      ; Moltiplica la base originale (R2) per il risultato parziale (R0)
+    mov pc, lr          ; Ritorna al chiamante con il risultato finale in R0
+
+base: 
+    ; --- CASO BASE (n = 0) ---
+    mov r0, #1          ; x^0 = 1, quindi carica 1 nel registro di ritorno R0
     mov pc, lr          ; Ritorna al chiamante
-
-continue:
-    ; Salvataggio del contesto
-    push {r0, lr}       ; Salva la base (R0) e l'indirizzo di ritorno (LR)
-    
-    ; Preparazione chiamata ricorsiva
-    sub r1, r1, #1      ; Calcola n-1
-    bl Exp              ; Chiamata ricorsiva: calcola x^(n-1)
-    
-    ; Ritorno dalla ricorsione
-    ; In R0 ora abbiamo il risultato di x^(n-1)
-    pop {r2, lr}        ; Recupera la base originale salvata e mettila in R2
-                        ; Recupera il vecchio LR per poter tornare indietro
-    
-    ; Calcolo finale
-    mul r0, r2, r0      ; R0 = base (R2) * risultato_precedente (R0)
-    mov pc, lr          ; Ritorna al chiamante con il risultato in R0
