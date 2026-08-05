@@ -66,10 +66,7 @@ alla codifica delle funzioni di ARMv7.
 * **Esercizio**: esercizio 1 gennaio 2026
 * **Esercizio**: Si realizzi una funzione in ARMv7 che riceve due interi codificati in modulo e segno su 16 bit e
 restituisce il loro prodotto, sempre in modulo e segno ma su 32 bit. La signature della funzione sarà
-quindi:
-
-bit32_t mult(bit16_t a, bit16_t b);
-
+quindi:  bit32_t mult(bit16_t a, bit16_t b);
 con bitNN_t tipo dei dati interi rappresentati in modulo e segno su NN bit. Dal momento che
 lavoriamo su ARMv7 (a 32 bit), dati bit16_t saranno rappresentati nella parte basse dei registri
 utilizzati per il passaggio di parametri e per il ritorno del risultato di una funzione. Per
