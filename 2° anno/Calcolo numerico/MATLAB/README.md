@@ -5,6 +5,8 @@
 ## Analisi Matematica
 
 * [Metodo di bisezione](bisezione.m)
+* [Metodo di punto fisso](puntofisso.m)
+* [Metodo di Newton](newton.m)
 
 
 
