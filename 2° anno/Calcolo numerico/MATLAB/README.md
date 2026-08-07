@@ -1,4 +1,4 @@
-# Implementazioni MATLAB degli algoritmi di calcolo numerico
+# Algoritmi Calcolo Numerico
 
 
 
